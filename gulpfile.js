@@ -23,8 +23,8 @@ var gulp = require("gulp"),
   uglify = require("gulp-uglify"),
   zip = require("gulp-zip");
 
-var themeName = "incredibletheme",
-  localSiteUrl = "dev.incredible.com",
+var themeName = "Northside Dermatology",
+  localSiteUrl = "dev.northside.com",
   buildDir = "./build/",
   buildInclude = [
     // include all
@@ -45,7 +45,7 @@ var themeName = "incredibletheme",
     "!.npmrc",
     "!README.md",
     "!assets/js/custom/*",
-    "!assets/css/partials/*"
+    "!assets/css/partials/*",
   ];
 
 function swallowError(error) {
@@ -53,13 +53,13 @@ function swallowError(error) {
   this.emit("end");
 }
 
-gulp.task("styles", function() {
+gulp.task("styles", function () {
   gulp
     .src("./assets/src/sass/main.scss")
     .pipe(plumber())
     .pipe(
       sass({
-        includePaths: ["./node_modules/bootstrap/scss/"]
+        includePaths: ["./node_modules/bootstrap/scss/"],
       })
     )
     .pipe(sourcemaps.init())
@@ -70,7 +70,7 @@ gulp.task("styles", function() {
         outputStyle: "compact",
         // outputStyle: 'nested',
         // outputStyle: 'expanded'
-        precision: 10
+        precision: 10,
       })
     )
     .pipe(sourcemaps.write({ includeContent: false }))
@@ -96,7 +96,7 @@ gulp.task("styles", function() {
     .pipe(rename({ suffix: ".min" }))
     .pipe(
       minifycss({
-        maxLineLen: 80
+        maxLineLen: 80,
       })
     )
     .pipe(gulp.dest("./assets/dist/css/"))
@@ -104,19 +104,19 @@ gulp.task("styles", function() {
     .pipe(notify({ message: "Styles task complete", onLast: true }));
 });
 
-gulp.task("pluginsJs", function() {
+gulp.task("pluginsJs", function () {
   return gulp
     .src([
       "./assets/src/js/plugins/*.js",
       "!./assets/src/js/plugins/modernizr-3.0.0.min.js",
-      "!./assets/src/js/customizer/theme-customizer.min.js"
+      "!./assets/src/js/customizer/theme-customizer.min.js",
     ])
     .pipe(concat("plugins.js"))
     .pipe(gulp.dest("./assets/dist/js/"))
     .pipe(
       rename({
         basename: "plugins",
-        suffix: ".min"
+        suffix: ".min",
       })
     )
     .pipe(uglify())
@@ -125,7 +125,7 @@ gulp.task("pluginsJs", function() {
     .pipe(browserSync.stream({ once: true }));
 });
 
-gulp.task("scriptsJs", function() {
+gulp.task("scriptsJs", function () {
   return gulp
     .src("./assets/src/js/main.js")
     .pipe(concat("main.js"))
@@ -133,7 +133,7 @@ gulp.task("scriptsJs", function() {
     .pipe(
       rename({
         basename: "main",
-        suffix: ".min"
+        suffix: ".min",
       })
     )
     .pipe(uglify())
@@ -143,7 +143,7 @@ gulp.task("scriptsJs", function() {
     .pipe(browserSync.stream({ once: true }));
 });
 
-gulp.task("customizerJs", function() {
+gulp.task("customizerJs", function () {
   return gulp
     .src("./assets/src/js/customizer/theme-customizer.js")
     .pipe(concat("theme-customizer.js"))
@@ -151,7 +151,7 @@ gulp.task("customizerJs", function() {
     .pipe(
       rename({
         basename: "theme-customizer",
-        suffix: ".min"
+        suffix: ".min",
       })
     )
     .pipe(uglify())
@@ -160,7 +160,7 @@ gulp.task("customizerJs", function() {
     .pipe(browserSync.stream({ once: true }));
 });
 
-gulp.task("images", function() {
+gulp.task("images", function () {
   return gulp
     .src(["./assets/src/img/raw/**/*.{png,jpg,gif}"])
     .pipe(newer("./assets/src/img/"))
@@ -172,7 +172,7 @@ gulp.task("images", function() {
     .pipe(notify({ message: "Images task complete", onLast: true }));
 });
 
-gulp.task("copy", function() {
+gulp.task("copy", function () {
   var modernizr = gulp
     .src("./assets/src/js/plugins/modernizr-3.0.0.min.js")
     .pipe(gulp.dest("./assets/dist/plugins"));
@@ -208,44 +208,44 @@ gulp.task("copy", function() {
   );
 });
 
-gulp.task("clear", function() {
+gulp.task("clear", function () {
   cache.clearAll();
 });
 
-gulp.task("clean", function() {
+gulp.task("clean", function () {
   return gulp
     .src(["**/.sass-cache", "**/.DS_Store"], { read: false })
     .pipe(ignore("node_modules/**"))
     .pipe(rimraf({ force: true }));
 });
 
-gulp.task("cleanFinal", function() {
+gulp.task("cleanFinal", function () {
   return gulp
     .src(["**/.sass-cache", "**/.DS_Store"], { read: false })
     .pipe(ignore("node_modules/**"))
     .pipe(rimraf({ force: true }));
 });
 
-gulp.task("buildFiles", function() {
+gulp.task("buildFiles", function () {
   return gulp
     .src(buildInclude)
     .pipe(gulp.dest(buildDir))
     .pipe(notify({ message: "Copy from buildFiles complete", onLast: true }));
 });
 
-gulp.task("buildImages", function() {
+gulp.task("buildImages", function () {
   return gulp
     .src(["assets/src/img/**/*", "!assets/src/img/raw/**"])
     .pipe(gulp.dest(buildDir + "assets/dist/img/"))
     .pipe(
       plugins.notify({
         message: "Images copied to buildTheme folder",
-        onLast: true
+        onLast: true,
       })
     );
 });
 
-gulp.task("buildZip", function() {
+gulp.task("buildZip", function () {
   return gulp
     .src(buildDir + "/**/")
     .pipe(zip(themeName + ".zip"))
@@ -253,7 +253,7 @@ gulp.task("buildZip", function() {
     .pipe(notify({ message: "Zip task complete", onLast: true }));
 });
 
-gulp.task("build", function(cb) {
+gulp.task("build", function (cb) {
   runSequence(
     "styles",
     "clean",
@@ -268,21 +268,21 @@ gulp.task("build", function(cb) {
   );
 });
 
-gulp.task("watch", function() {
+gulp.task("watch", function () {
   var files = ["./**/*.php", "./**/*.{png,jpg,gif}"];
   browserSync.init(files, {
     // http://www.browsersync.io/docs/options/
     proxy: localSiteUrl,
     // port: 8080,
     // tunnel: true,
-    injectChanges: true
+    injectChanges: true,
   });
   gulp.watch("./assets/src/img/raw/**/*.{png,jpg,gif}", ["images"]);
   gulp.watch("./assets/src/sass/**/*.scss", ["styles"]);
   gulp.watch("./assets/src/js/**/*.js", [
     "scriptsJs",
     "pluginsJs",
-    "customizerJs"
+    "customizerJs",
   ]);
 });
 
@@ -293,5 +293,5 @@ gulp.task("default", [
   "customizerJs",
   "images",
   "copy",
-  "watch"
+  "watch",
 ]);
