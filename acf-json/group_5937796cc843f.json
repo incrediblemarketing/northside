@@ -43,6 +43,30 @@
             "mime_types": ""
         },
         {
+            "key": "field_5efa489b680bb",
+            "label": "Logo",
+            "name": "logo",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
             "key": "field_5b69c1c245d56",
             "label": "Block Defaults",
             "name": "",
@@ -378,7 +402,7 @@
                         "email": "Email",
                         "location": "Location"
                     },
-                    "default_value": [],
+                    "default_value": false,
                     "allow_null": 1,
                     "multiple": 0,
                     "ui": 0,
@@ -424,9 +448,9 @@
             "endpoint": 0
         },
         {
-            "key": "field_5982496426a5a",
-            "label": "Business Street Address",
-            "name": "business_street_address",
+            "key": "field_5efa4b9a166b3",
+            "label": "Business Hours",
+            "name": "business_hours",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -436,16 +460,16 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
+            "default_value": "(999) 999-9999",
             "placeholder": "",
             "prepend": "",
             "append": "",
             "maxlength": ""
         },
         {
-            "key": "field_5982497826a5b",
-            "label": "Business City State Zip",
-            "name": "business_city_state_zip",
+            "key": "field_5efa4b8e166b2",
+            "label": "Business Fax",
+            "name": "business_fax",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -455,27 +479,11 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
+            "default_value": "(999) 999-9999",
             "placeholder": "",
             "prepend": "",
             "append": "",
             "maxlength": ""
-        },
-        {
-            "key": "field_598250b8eaa29",
-            "label": "Business Address Link (Directions)",
-            "name": "business_address_link",
-            "type": "url",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": ""
         },
         {
             "key": "field_5982499626a5c",
@@ -514,6 +522,127 @@
             "prepend": "",
             "append": "",
             "maxlength": ""
+        },
+        {
+            "key": "field_5efa4b3a166b0",
+            "label": "Business",
+            "name": "business",
+            "type": "flexible_content",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layouts": {
+                "layout_5efa4b45d9be3": {
+                    "key": "layout_5efa4b45d9be3",
+                    "name": "location",
+                    "label": "Location",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5efb6eb2eafde",
+                            "label": "Business Title",
+                            "name": "business_title",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_5982496426a5a",
+                            "label": "Business Street Address",
+                            "name": "business_street_address",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_5982497826a5b",
+                            "label": "Business City State Zip",
+                            "name": "business_city_state_zip",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_598250b8eaa29",
+                            "label": "Business Address Link (Directions)",
+                            "name": "business_address_link",
+                            "type": "url",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_5efa4bb4166b4",
+                            "label": "Iframe",
+                            "name": "iframe",
+                            "type": "textarea",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "maxlength": "",
+                            "rows": "",
+                            "new_lines": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                }
+            },
+            "button_label": "Add Row",
+            "min": "",
+            "max": ""
         }
     ],
     "location": [
@@ -533,5 +662,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1542229960
+    "modified": 1593536198
 }

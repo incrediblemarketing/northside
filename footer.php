@@ -21,19 +21,92 @@
 	$phone_url    = get_field( 'business_phone_url', 'option' );
 ?>
 
-<footer class="footer bg-light">
-	<?php get_template_part( 'components/social-icons' ); ?>
-	<?php if ( $phone_url && $phone ) : ?>
-	<p><a href="tel:+1-<?php echo esc_attr( $phone_url ); ?>"><?php echo esc_attr( $phone ); ?></a></p>
-	<?php endif; ?>
+<section class="block--map-area">
+	<div class="container">
+		<div class="row">
+			<div class="col-xl-3">
+				<h2>Contact Us</h2>
+				<div class="info--general">
+					<div class="info__hours">
+						<div class="icon--box">
+							<i class="fas fa-clock"></i>
+						</div>
+						<h4>Hours of Operation</h4>
+						<p><?php echo get_field( 'business_hours', 'options' ); ?></p>
+					</div>
+					<div class="info__phone">
+						<div class="icon--box">
+							<i class="fas fa-phone"></i>
+						</div>
+						<h4>Phone Number</h4>
+						<p><a href="<?php echo get_field( 'business_phone_url', 'options' ); ?>"><?php echo get_field( 'business_phone_display', 'options' ); ?></a></p>
+					</div>
+					<div class="info__fax">
+						<div class="icon--box">
+							<i class="fas fa-fax"></i>
+						</div>
+						<h4>Fax Number</h4>
+						<p><?php echo get_field( 'business_fax', 'options' ); ?></p>
+					</div>
+				</div>
+			</div>
+			<div class="col-xl-9">
+				<?php if ( have_rows( 'business', 'options' ) ) : ?>
+					<?php while ( have_rows( 'business', 'options' ) ) : ?>
+						<?php the_row(); ?>
+						<?php if ( get_row_layout() == 'location' ) : ?>
+							<div class="location--box">
+								<?php echo get_sub_field( 'iframe' ); ?>
+								<div class="info--box">
+									<h3><?php echo get_sub_field( 'business_title' ); ?></h3>
+									<p><?php echo get_sub_field( 'business_street_address' ); ?><br/><?php echo get_sub_field( 'business_city_state_zip' ); ?></p>
+									<a href="<?php echo get_sub_field( 'business_address_link' ); ?>">Get Directions ></a>
+								</div>
+							</div>
+						<?php endif; ?>
+					<?php endwhile; ?>
+				<?php endif; ?>
+			</div>
+		</div>
+	</div>
+</section>
 
-	<?php if ( $address_link && $address && $address2 ) : ?>
-	<p><a href="<?php echo esc_attr( $address_link ); ?>" target="_blank">
-			<?php echo esc_attr( $address ); ?><br />
-			<?php echo esc_attr( $address2 ); ?></a></p>
-	<?php endif; ?>
+<section class="block--contact-form">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<?php echo do_shortcode( '[gravityforms id="1" title="false" description="false" ajax="true"]' ); ?>
+			</div>
+		</div>
+	</div>
+</section>
 
-	<p>&copy; <?php echo esc_attr( gmdate( 'Y' ) ); ?> <?php echo esc_attr( $copyright ) ?: esc_attr( get_bloginfo() ); ?> | <a href="/privacy-policy/">Privacy Policy</a> & <a href="/terms-of-use/">Terms of Use</a> | Digital Marketing By <a href="https://www.incrediblemarketing.com/" target="_blank"><?php get_template_part( 'components/svg/incredible-marketing' ); ?>Incredible Marketing</a></p>
+<footer class="footer">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<div class="grid--page-links">
+					<div class="list--pages">
+						<h3>Skin Cancers</h3>
+						<?php echo do_shortcode( '[child_pages id="161"]' ); ?>
+					</div>
+					<div class="list--pages">
+						<h3>Medical Dermatology</h3>
+						<?php echo do_shortcode( '[child_pages id="171"]' ); ?>
+					</div>
+					<div class="list--pages">
+						<h3>Aesthetic Dermatology</h3>
+						<?php echo do_shortcode( '[child_pages id="181"]' ); ?>
+					</div>
+					<div class="list--pages">
+						<h3>Programs Dermatology</h3>
+						<?php echo do_shortcode( '[child_pages id="195"]' ); ?>
+					</div>
+				</div>			
+				<p>&copy; <?php echo esc_attr( gmdate( 'Y' ) ); ?> <?php echo esc_attr( $copyright ) ?: esc_attr( get_bloginfo() ); ?> | <a href="/privacy-policy/">Privacy Policy</a> & <a href="/terms-of-use/">Terms of Use</a>
+			</div>
+		</div>
+	</div>
 </footer>
 
 </div><!-- end of .site-wrap -->

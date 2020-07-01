@@ -96,9 +96,7 @@
                                 "5": "5",
                                 "6": "6"
                             },
-                            "default_value": [
-                                1
-                            ],
+                            "default_value": 1,
                             "allow_null": 0,
                             "multiple": 0,
                             "ui": 0,
@@ -826,6 +824,44 @@
                             "endpoint": 0
                         },
                         {
+                            "key": "field_5efa847111333",
+                            "label": "Video ID",
+                            "name": "video_id",
+                            "type": "text",
+                            "instructions": "Vimeo (Only)",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_5efa8512ecd37",
+                            "label": "Title",
+                            "name": "title",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
                             "key": "field_5e73e95f7ff21",
                             "label": "Content",
                             "name": "content",
@@ -843,30 +879,86 @@
                             "toolbar": "full",
                             "media_upload": 1,
                             "delay": 0
-                        },
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_5efa90dd40994": {
+                    "key": "layout_5efa90dd40994",
+                    "name": "procedures",
+                    "label": "Procedures",
+                    "display": "block",
+                    "sub_fields": [
                         {
-                            "key": "field_5e73e90f7ff16",
-                            "label": "Background Image",
-                            "name": "background_image",
-                            "type": "image",
+                            "key": "field_5efa90dd40995",
+                            "label": "Block Options",
+                            "name": "",
+                            "type": "tab",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
                                 "width": "",
-                                "class": "hide-label",
+                                "class": "",
                                 "id": ""
                             },
-                            "return_format": "array",
-                            "preview_size": "medium",
-                            "library": "all",
-                            "min_width": "",
-                            "min_height": "",
-                            "min_size": "",
-                            "max_width": "",
-                            "max_height": "",
-                            "max_size": "",
-                            "mime_types": ""
+                            "placement": "left",
+                            "endpoint": 0
+                        },
+                        {
+                            "key": "field_5efa90dd40996",
+                            "label": "Block Options",
+                            "name": "block_options",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_5b5b6ae092e59"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        },
+                        {
+                            "key": "field_5efa90dd40997",
+                            "label": "Procedure Content",
+                            "name": "",
+                            "type": "tab",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "placement": "left",
+                            "endpoint": 0
+                        },
+                        {
+                            "key": "field_5efa90f94099b",
+                            "label": "Message",
+                            "name": "",
+                            "type": "message",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "Block pulls all procedure pages and lists them.",
+                            "new_lines": "wpautop",
+                            "esc_html": 0
                         }
                     ],
                     "min": "",
@@ -1161,5 +1253,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1584654828
+    "modified": 1593479476
 }

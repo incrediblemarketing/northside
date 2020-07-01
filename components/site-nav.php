@@ -26,9 +26,8 @@
 	);
 	wp_nav_menu( $args );
 	?>
-
-	<?php get_template_part( 'components/call' ); ?>
-	<?php get_template_part( 'components/social-icons' ); ?>
+	<?php get_search_form(); ?> 
+	<a href="https://www.hotdoc.com.au/medical-centres/fitzroy-north-VIC-3068/northside-dermatology/doctors/dr-wenyuan-liu" target="_blank" class="btn--white">Book Now</a>
 	<button data-toggle="menu">
 		<span></span>
 		<span></span>

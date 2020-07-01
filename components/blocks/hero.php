@@ -12,31 +12,27 @@
  */
 
 
-$content                = get_sub_field( 'content' );
-$image                  = get_sub_field( 'background_image' );
-$business_phone_display = get_field( 'business_phone_display', 'options' );
-$business_phone_url     = get_field( 'business_phone_url', 'options' );
-?>
-<?php if ( ! empty( $image ) ) : ?>
-	<div class="image--holder">
-		<img src="<?php echo esc_url( $image['sizes']['hero_thumb'] ); ?>" alt="<?php echo esc_attr( $image['alt'] ); ?>" />
-	</div>
-<?php endif; ?>
+$content       = get_sub_field( 'content' );
+$content_title = get_sub_field( 'title' );
+$vimeo         = get_sub_field( 'video_id' );
 
-<div class="container-fluid">
+?>
+<div class="container">
 	<div class="row">
-		<div class="col-xxl-6 offset-xl-1 col-xl-7 col-lg-8">
-			<?php echo $content; ?>
-			<?php if ( $business_phone_display && $business_phone_url ) : ?>
-				<a class="btn btn-primary" href="tel:<?php echo esc_attr( $business_phone_url ); ?>">Call <?php echo esc_attr( $business_phone_display ); ?></a>
-			<?php endif; ?>
-			<br/>
-			<a href="#" class="js-scroll-to">
-				<div class="more">
-					<div class="line"></div>
-					<p>Begin Exploring</p>
+		<div class="col-12">
+			<?php if ( $vimeo ) : ?>
+				<div id="vimeo_video" class="embed-responsive embed-responsive-16by9">
+					<iframe class="embed-responsive-item" src="https://player.vimeo.com/video/<?php echo esc_attr( $vimeo ); ?>?autoplay=1&muted=1&loop=1&controls=0" allowfullscreen></iframe>
 				</div>
-			</a>
+			<?php endif; ?>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xl-4">
+			<h1><?php echo $content_title; ?></h1>
+		</div>
+		<div class="col-xl-6">
+			<?php echo $content; ?>
 		</div>
 	</div>
 </div>

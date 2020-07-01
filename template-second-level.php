@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Top Level Procedure Page
+ * Template Name: Second Level Procedure Page
  * Template Post Type: procedure
  *
  * @category   Components
@@ -18,6 +18,14 @@ get_header();  ?>
 <div class="container page__top-level">
   <div class="row justify-content-center section__padding flex-row-reverse">
 	  <div class="col-xl-9 pl-5">
+				<?php $currentID = $post->ID; ?>
+				<div class="featured--large">
+					<?php if(has_post_thumbnail()):
+						echo get_the_post_thumbnail( $currentID, 'featured_thumb' ); 
+					else: 
+						im_the_placeholder_image('featured_thumb' ); 
+					endif; ?>
+				</div>
 			<div class="grid--inner">
 		<?php
 		$args  = array(
@@ -33,36 +41,8 @@ get_header();  ?>
 				$query->the_post();
 				?>
 							<div class="procedure--area">
-						<?php $currentID = $post->ID; ?>
-						<?php if(has_post_thumbnail()):
-							echo get_the_post_thumbnail( $currentID, 'featured_thumb' ); 
-						else: 
-							im_the_placeholder_image('featured_thumb' ); 
-						endif; ?>
 						<h2><a href="<?php echo get_the_permalink(); ?>"><?php the_title(); ?></a></h2>
-						<?php
-							$args2  = array(
-								'post_type'   => 'procedure',
-								'post_parent' => $currentID,
-								'order'       => 'ASC',
-								'orderby'     => 'menu_order',
-							);
-							$query2 = new WP_Query( $args2 );
-							if ( $query2->have_posts() ) :
-								?>
-										<ul class="procedure--list">
-								<?php
-								while ( $query2->have_posts() ) :
-									$query2->the_post();
-									?>
-											<li><a href="<?php echo get_the_permalink(); ?>"><?php echo get_the_title(); ?></a></li>
-											<?php
-										endwhile;
-								wp_reset_postdata();
-								?>
-										</ul>
-									<?php endif; ?>
-								</div>
+						</div>
 						<?php
 					endwhile;
 					wp_reset_postdata();

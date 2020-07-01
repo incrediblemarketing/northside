@@ -18,7 +18,7 @@ add_image_size( 'background_thumb', 1430, 569, true );
 add_image_size( 'hero_thumb', 1920, 1080, true );
 add_image_size( 'page_header_thumb', 1920, 548, true );
 add_image_size( 'blog_row_thumb', 370, 223, true );
-add_image_size( 'post_large', 1430, 796, true );
+add_image_size( 'post_large', 800, 450, true );
 
 /**
  * Add Image Sizes to Array
@@ -55,7 +55,7 @@ function im_get_placeholder_image( $size = full, $class = '', $bg_color = '25252
 	$image_height = $image_sizes[ $size ]['height'];
 	$image_width  = $image_sizes[ $size ]['width'];
 	ob_start(); ?>
-	<img class="<?php echo esc_attr( $class ); ?>" src="//placehold.it/<?php echo esc_attr( $image_width ); ?>x<?php echo esc_attr( $image_height ); ?>/<?php echo esc_attr( $bg_color ); ?>/<?php echo esc_attr( $text_color ); ?>" alt="">
+	<img class="<?php echo esc_attr( $class ); ?>" src="http://via.placeholder.com/<?php echo esc_attr( $image_width ); ?>x<?php echo esc_attr( $image_height ); ?>/<?php echo esc_attr( $bg_color ); ?>/<?php echo esc_attr( $text_color ); ?>" alt="">
 	<?php
 		return ob_get_clean();
 }
@@ -69,7 +69,7 @@ function im_get_placeholder_image( $size = full, $class = '', $bg_color = '25252
  * @param string|int   $text_color string or int (usually a HEX) as its the text color.
  */
 function im_the_placeholder_image( $size = full, $class = '', $bg_color = '252525', $text_color = 'FFFFFF' ) {
-	echo esc_html( im_get_placeholder_image( $size, $class, $bg_color, $text_color ) );
+	echo im_get_placeholder_image( $size, $class, $bg_color, $text_color ) ;
 }
 
 /**
@@ -99,8 +99,8 @@ function im_get_all_image_sizes() {
 			'height' => 223,
 		),
 		'post_large'         => array(
-			'width'  => 1430,
-			'height' => 796,
+			'width'  => 800,
+			'height' => 450,
 		),
 	);
 	return array_merge( $image_sizes, $_wp_additional_image_sizes );

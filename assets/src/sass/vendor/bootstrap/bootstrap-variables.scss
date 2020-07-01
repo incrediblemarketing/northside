@@ -3,15 +3,20 @@
 // Define custom defaults for anything in node_modules/bootstrap/scss/_variables.scss
 
 $spacers: (
-	col: calc(100vw/12)
+  col: calc(100vw / 12),
 );
-
 $grid-breakpoints: (
-	xs: 0,
-	sm: 576px,
-	md: 768px,
-	lg: 992px,
-	xl: 1200px,
-	xxl: 1600px,
-	xxxl: 1920px
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1600px,
+  xxxl: 1920px,
 );
+$container-max-widths: (
+  sm: 540px,
+  md: 700px,
+  lg: 930px,
+  xl: 1280px,
+) !default;

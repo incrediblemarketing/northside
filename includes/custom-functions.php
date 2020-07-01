@@ -391,3 +391,14 @@ function get_gallery_info() {
 
 add_action( 'wp_ajax_get_gallery_info', 'get_gallery_info' );
 add_action( 'wp_ajax_nopriv_get_gallery_info', 'get_gallery_info' );
+
+function html5_search_form( $form ) { 
+	$form = '<section class="search"><form role="search" method="get" id="searchform" action="' . home_url( '/' ) . '" >
+ <label class="screen-reader-text" for="s">' . __('',  'domain') . '</label>
+	<input type="search" value="' . get_search_query() . '" name="s" id="s" placeholder="Search..." />
+	<input type="submit" id="searchsubmit" value="'. esc_attr__('Go', 'domain') .'" />
+	</form></section>';
+	return $form;
+}
+
+add_filter( 'get_search_form', 'html5_search_form' );

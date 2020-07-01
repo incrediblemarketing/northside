@@ -12,11 +12,30 @@
  */
 
 /**
- * Child page shortcode [child_pages]
+ * Child page shortcode [child_pages id=""]
  */
-function shortcode_child_pages() {
-	ob_start();
-	get_template_part( 'components/navigation-child-pages' );
-	return ob_get_clean();
+function shortcode_child_pages( $atts ) {
+
+	$page_id = $atts['id'];
+	$args = array(
+		'post_type'      => 'procedure',
+		'post_parent'    => $page_id,
+		'posts_per_page' => -1,
+	);
+
+	$the_query = new WP_Query( $args );
+
+	if ( $the_query->have_posts() ) :
+		$content = '<ul>';
+		while ( $the_query->have_posts() ) :
+			$the_query->the_post();
+			$content .= '<li><a href="' . get_the_permalink() . '">' . get_the_title() . '</a></li>';
+		endwhile;
+		$content .= '</ul>';
+	endif;
+
+	wp_reset_postdata();
+
+	return $content;
 }
 add_shortcode( 'child_pages', 'shortcode_child_pages' );
