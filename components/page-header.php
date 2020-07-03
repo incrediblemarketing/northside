@@ -26,13 +26,13 @@ global $post;
 
 $parentId      = $post->post_parent;
 $grandparent   = get_post( $parentId );
-$grandparentId= $grandparent->post_parent;
+$grandparentId = $grandparent->post_parent;
 
-if ( is_singular( 'procedure' )) {
-	if ( $parentId != 0 ) {
+if ( is_singular( 'procedure' ) ) {
+	if ( $parentId !== 0 ) {
 		$background_image = get_field( 'page_header_background_image', $parentId );
 	}
-	if ( $grandparentId != 0 ) {
+	if ( $grandparentId !== 0 ) {
 		$background_image = get_field( 'page_header_background_image', $grandparentId );
 	}
 }
@@ -74,10 +74,10 @@ if ( is_singular( 'procedure' )) {
 				</div>
 				<div class="breadcrumbs">
 					<a href="/">Home</a> / 
-					<?php if ( 0 !== $parentId->post_parent && 0 !== $parentId ) { ?>
+					<?php if ( 0 !== $grandparentId ) { ?>
 						<a href="<?php echo get_permalink( $grandparentId ); ?>"><?php echo get_the_title( $grandparentId ); ?></a> /
 					<?php } ?>
-					<?php if ( 0 !== $post->post_parent ) { ?>
+					<?php if ( 0 !== $parentId ) { ?>
 						<a href="<?php echo get_permalink( $parentId ); ?>"><?php echo get_the_title( $parentId ); ?></a> /
 					<?php } ?>
 					<span><?php echo esc_attr( $title ? $title : get_the_title() ); ?></span>

@@ -26,7 +26,8 @@
     padding: 0;
     list-style: none;
 
-    li {
+    > li {
+      position: relative;
       a {
         margin-right: 0px;
         padding-right: 10px;
@@ -42,6 +43,69 @@
         height: 112px;
         display: flex;
         align-items: center;
+      }
+
+      &:hover {
+        > .sub-menu {
+          position: absolute;
+          top: 100%;
+          left: 50%;
+          transform: translateX(-50%);
+          display: block;
+          background: #bfc1bc;
+          padding: 0;
+          margin: 0;
+          list-style: none;
+          width: 250px;
+
+          li {
+            position: relative;
+
+            a {
+              padding: 10px 25px;
+              display: block;
+              height: auto;
+              white-space: normal;
+              border-bottom: 0;
+              transition: all 0.3s ease-in-out;
+              &:hover {
+                background: $white;
+                color: $black;
+              }
+            }
+
+            .sub-menu {
+              display: none;
+            }
+
+            &:hover {
+              > .sub-menu {
+                width: 250px;
+                padding: 0;
+                list-style: none;
+                display: block;
+                background: #bfc1bc;
+                position: absolute;
+                top: 0;
+                left: 100%;
+                transform: unset;
+
+                li {
+                  a {
+                    padding: 10px 25px;
+                    white-space: normal;
+                    border-bottom: 0;
+                    transition: all 0.3s ease-in-out;
+                    &:hover {
+                      background: $white;
+                      color: $black;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     }
   }

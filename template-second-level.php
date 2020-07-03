@@ -18,13 +18,14 @@ get_header();  ?>
 <div class="container page__top-level">
   <div class="row justify-content-center section__padding flex-row-reverse">
 	  <div class="col-xl-9 pl-5">
-				<?php $currentID = $post->ID; ?>
 				<div class="featured--large">
-					<?php if(has_post_thumbnail()):
-						echo get_the_post_thumbnail( $currentID, 'featured_thumb' ); 
-					else: 
-						im_the_placeholder_image('featured_thumb' ); 
-					endif; ?>
+					<?php
+					if ( has_post_thumbnail() ) :
+						echo get_the_post_thumbnail( $current_id, 'featured_thumb' );
+					else :
+						im_the_placeholder_image( 'featured_thumb' );
+					endif;
+					?>
 				</div>
 			<div class="grid--inner">
 		<?php
@@ -51,14 +52,18 @@ get_header();  ?>
 			</div>
 		</div>
 		<div class="col-xl-3">
-			<?php
-			$args = array(
-				'theme_location' => 'side-menu',
-				'container'      => false,
-				'menu_class'     => 'menu',
-			);
-			wp_nav_menu( $args );
-			?>
+			<ul id="menu-side-menu" class="menu">
+				<?php
+					wp_list_pages(
+						array(
+							'post_type' => 'procedure',
+							'title_li'  => '',
+							'child_of'  => wp_get_post_parent_id( $current_id ),
+							'depth'     => 1,
+						)
+					);
+					?>
+			</ul>
 		</div>
   </div>
 </div>

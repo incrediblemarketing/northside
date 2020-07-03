@@ -99,8 +99,8 @@
 						<?php echo do_shortcode( '[child_pages id="181"]' ); ?>
 					</div>
 					<div class="list--pages">
-						<h3>Programs Dermatology</h3>
-						<?php echo do_shortcode( '[child_pages id="195"]' ); ?>
+						<h3>Programs</h3>
+						<?php echo do_shortcode( '[child_pages id="378"]' ); ?>
 					</div>
 				</div>			
 				<p>&copy; <?php echo esc_attr( gmdate( 'Y' ) ); ?> <?php echo esc_attr( $copyright ) ?: esc_attr( get_bloginfo() ); ?> | <a href="/privacy-policy/">Privacy Policy</a> & <a href="/terms-of-use/">Terms of Use</a>

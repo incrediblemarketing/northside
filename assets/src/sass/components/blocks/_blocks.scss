@@ -2,7 +2,7 @@
   position: relative;
 }
 header {
-  margin-bottom: 45px;
+  margin-bottom: 65px;
 
   .breadcrumbs {
     color: #929292;
@@ -118,5 +118,23 @@ header {
     width: 50%;
     height: auto;
     margin-bottom: 30px;
+  }
+}
+
+.page__lower-level {
+  .content--area {
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 45px;
+      font-family: Georgia, Times, "Times New Roman", serif;
+      color: #131212;
+      font-size: 48px;
+      line-height: 1.2em;
+      font-weight: 400;
+      margin-top: 45px;
+    }
+    ul {
+      padding-left: 25px;
+    }
   }
 }
