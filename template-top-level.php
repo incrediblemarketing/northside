@@ -17,7 +17,7 @@ get_header();  ?>
 
 <div class="container page__top-level">
   <div class="row justify-content-center section__padding flex-row-reverse">
-	  <div class="col-xl-9 pl-5">
+	  <div class="col-xl-9 col-lg-8 pl-5 small-zero">
 			<div class="grid--inner">
 		<?php
 		$args  = array(
@@ -34,11 +34,13 @@ get_header();  ?>
 				?>
 							<div class="procedure--area">
 						<?php $currentID = $post->ID; ?>
-						<?php if(has_post_thumbnail()):
-							echo get_the_post_thumbnail( $currentID, 'featured_thumb' ); 
-						else: 
-							im_the_placeholder_image('featured_thumb' ); 
-						endif; ?>
+						<?php
+						if ( has_post_thumbnail() ) :
+							echo get_the_post_thumbnail( $currentID, 'blog_preview_thumb' );
+						else :
+							im_the_placeholder_image( 'blog_preview_thumb' );
+						endif;
+						?>
 						<h2><a href="<?php echo get_the_permalink(); ?>"><?php the_title(); ?></a></h2>
 						<?php
 							$args2  = array(
@@ -70,7 +72,7 @@ get_header();  ?>
 		?>
 			</div>
 		</div>
-		<div class="col-xl-3">
+		<div class="col-xl-3 col-lg-4">
 			<?php
 			$args = array(
 				'theme_location' => 'side-menu',

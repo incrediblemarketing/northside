@@ -24,7 +24,7 @@
 <section class="block--map-area">
 	<div class="container">
 		<div class="row">
-			<div class="col-xl-3">
+			<div class="col-xl-3 col-lg-4 mb-5">
 				<h2>Contact Us</h2>
 				<div class="info--general">
 					<div class="info__hours">
@@ -50,7 +50,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-xl-9">
+			<div class="col-xl-9 col-lg-8">
 				<?php if ( have_rows( 'business', 'options' ) ) : ?>
 					<?php while ( have_rows( 'business', 'options' ) ) : ?>
 						<?php the_row(); ?>
@@ -70,16 +70,17 @@
 		</div>
 	</div>
 </section>
-
-<section class="block--contact-form">
-	<div class="container">
-		<div class="row">
-			<div class="col-12">
-				<?php echo do_shortcode( '[gravityforms id="1" title="false" description="false" ajax="true"]' ); ?>
+<?php if ( ! is_page( 'contact' ) ) : ?>
+	<section class="block--contact-form">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<?php echo do_shortcode( '[gravityforms id="1" title="false" description="false" ajax="true"]' ); ?>
+				</div>
 			</div>
 		</div>
-	</div>
-</section>
+	</section>
+<?php endif; ?>
 
 <footer class="footer">
 	<div class="container">

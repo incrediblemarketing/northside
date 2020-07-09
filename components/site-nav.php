@@ -34,3 +34,6 @@
 		<span></span>
 	</button>
 </nav>
+<div class="side--fixed">
+	<?php get_template_part( 'components/social-icons' ); ?>
+</div>

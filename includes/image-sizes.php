@@ -11,7 +11,7 @@
  * @since      1.0.0
  */
 
-add_image_size( 'blog_preview_thumb', 290, 175, true );
+add_image_size( 'blog_preview_thumb', 374, 226, true );
 add_image_size( 'featured_thumb', 535, 402, true );
 add_image_size( 'parent_thumb', 715, 715, true );
 add_image_size( 'background_thumb', 1430, 569, true );

@@ -1,6 +1,6 @@
 <?php
 /**
- * Single Procedure
+ * Single Dermatologist
  *
  * @category   Components
  * @package    WordPress
@@ -20,24 +20,20 @@ get_header();  ?>
 			<?php if ( have_posts() ) : ?>
 				<?php while ( have_posts() ) : ?>
 					<?php the_post(); ?>
+					<?php echo get_the_post_thumbnail( $post->ID, 'post_large' ); ?>
 					<?php the_content(); ?>
 				<?php endwhile; ?> 
 			<?php endif; ?>
 		</div>
 		<div class="col-xl-3 col-lg-4 hide-small">
-			<h3 class="mb-3"><?php echo get_the_title(wp_get_post_parent_id( $current_id )); ?></h3>
-			<ul id="menu-side-menu" class="menu">
-				<?php
-					wp_list_pages(
-						array(
-							'post_type' => 'procedure',
-							'title_li'  => '',
-							'child_of'  => wp_get_post_parent_id( $current_id ),
-							'depth'     => 1,
-						)
-					);
-					?>
-			</ul>
+			<?php
+			$args = array(
+				'theme_location' => 'side-menu',
+				'container'      => false,
+				'menu_class'     => 'menu',
+			);
+				wp_nav_menu( $args );
+			?>
 		</div>
   </div>
 </div>

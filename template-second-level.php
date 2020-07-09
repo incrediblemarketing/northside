@@ -17,13 +17,13 @@ get_header();  ?>
 
 <div class="container page__top-level">
   <div class="row justify-content-center section__padding flex-row-reverse">
-	  <div class="col-xl-9 pl-5">
+	  <div class="col-xl-9 col-lg-8 pl-5 small-zero">
 				<div class="featured--large">
 					<?php
 					if ( has_post_thumbnail() ) :
-						echo get_the_post_thumbnail( $current_id, 'featured_thumb' );
+						echo get_the_post_thumbnail( $current_id, 'blog_preview_thumb' );
 					else :
-						im_the_placeholder_image( 'featured_thumb' );
+						im_the_placeholder_image( 'blog_preview_thumb' );
 					endif;
 					?>
 				</div>
@@ -51,7 +51,7 @@ get_header();  ?>
 		?>
 			</div>
 		</div>
-		<div class="col-xl-3">
+		<div class="col-xl-3 col-lg-4">
 			<ul id="menu-side-menu" class="menu">
 				<?php
 					wp_list_pages(

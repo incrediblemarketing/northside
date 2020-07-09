@@ -22,11 +22,16 @@ body {
 a {
   &:hover {
     text-decoration: none;
+    color: #ba8679;
   }
 }
 
 .site-wrap {
-  padding-top: 200px;
+  padding-top: 140px;
+
+  @include mq(xxl) {
+    padding-top: 200px;
+  }
 }
 
 // Remove subpixel-antialiased default but keep for retina resolutions.
@@ -65,4 +70,16 @@ h4,
 h5,
 h6 {
   font-weight: 600;
+}
+
+.small-zero {
+  @include mq($until: lg) {
+    padding-left: 15px !important;
+  }
+}
+
+.hide-small {
+  @include mq($until: lg) {
+    display: none;
+  }
 }

@@ -14,31 +14,32 @@
 /**
  * Staff member shortcode [staff]
  */
-function shortcode_staff() {
+function shortcode_derm() {
 	global $post;
 
 	$args = array(
-		'post_type'      => 'team_member',
+		'post_type'      => 'dermatologist',
 		'posts_per_page' => -1,
 		'order'          => 'ASC',
 		'orderby'        => 'menu_order',
 	);
 
-	$staff   = new WP_Query( $args );
+	$derm   = new WP_Query( $args );
 	$content = '';
-	if ( $staff->have_posts() ) :
+	if ( $derm->have_posts() ) :
 		$content .= '<div class="team--grid">';
-		while ( $staff->have_posts() ) :
-			$staff->the_post();
+		while ( $derm->have_posts() ) :
+			$derm->the_post();
 			$content .= '<div class="block__team-member">';
-			$content .= get_the_post_thumbnail( $post->ID, 'featured_thumb' );
+			$content .= '<a href="'.get_the_permalink().'">';
+			$content .= get_the_post_thumbnail( $post->ID, 'blog_preview_thumb' );
 			$content .= '<h3>' . get_the_title() . '</h3>';
-			$content .= '</div>';
-			endwhile;
+			$content .= '</a></div>';
+		endwhile;
 		$content .= '</div>';
 		wp_reset_postdata();
 		endif;
 
 	return $content;
 }
-add_shortcode( 'our_staff', 'shortcode_staff' );
+add_shortcode( 'our_derm', 'shortcode_derm' );

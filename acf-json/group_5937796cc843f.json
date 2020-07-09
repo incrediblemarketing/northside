@@ -634,6 +634,27 @@
                             "maxlength": "",
                             "rows": "",
                             "new_lines": ""
+                        },
+                        {
+                            "key": "field_5f061bfd66035",
+                            "label": "Page Link",
+                            "name": "page_link",
+                            "type": "page_link",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "post_type": [
+                                "page"
+                            ],
+                            "taxonomy": "",
+                            "allow_null": 0,
+                            "allow_archives": 1,
+                            "multiple": 0
                         }
                     ],
                     "min": "",
@@ -662,5 +683,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1593536198
+    "modified": 1594235922
 }
