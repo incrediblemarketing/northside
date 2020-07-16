@@ -283,3 +283,23 @@ header {
     }
   }
 }
+
+.search {
+  article {
+    margin-bottom: 45px;
+    padding-bottom: 45px;
+    position: relative;
+    border-bottom: 1px solid rgba($primary, 0.3);
+
+    &:last-of-type {
+      border-bottom: 0;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+  }
+  .content--area {
+    nav {
+      margin-top: 45px;
+    }
+  }
+}
