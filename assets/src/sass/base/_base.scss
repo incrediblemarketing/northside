@@ -22,7 +22,7 @@ body {
 a {
   &:hover {
     text-decoration: none;
-    color: #ba8679;
+    color: #cca29d;
   }
 }
 
@@ -81,5 +81,89 @@ h6 {
 .hide-small {
   @include mq($until: lg) {
     display: none;
+  }
+}
+
+.search--area {
+  position: relative;
+  margin-left: auto;
+
+  @include mq($until: md) {
+    display: none;
+  }
+
+  i {
+    height: 48px;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    background: #cca29d;
+    color: $white;
+  }
+  .search-form {
+    position: absolute;
+    top: 105%;
+    left: 50%;
+    display: none;
+    transform: translateX(-50%);
+  }
+
+  &.active {
+    .search-form {
+      display: block;
+    }
+  }
+}
+
+.mobile-switcher {
+  margin-left: 8px;
+  margin-right: 8px;
+  height: 38px;
+  @include mq(md) {
+    margin-left: 15px;
+    display: none;
+  }
+
+  .switcher {
+    margin: 0 !important;
+    cursor: pointer;
+    overflow: hidden;
+    width: 36px;
+    line-height: 17px;
+    border: 1px solid #929292;
+    margin: 35px auto;
+
+    .selected a {
+      border: 1px solid #ccc;
+      color: transparent;
+      padding: 3px 4px 2px;
+      width: 28px;
+      height: 26px;
+
+      img {
+        margin-bottom: 15px;
+      }
+
+      &:after {
+        display: none;
+      }
+    }
+
+    .option {
+      position: absolute;
+      width: 35px;
+      a {
+        color: transparent;
+        padding: 3px 4px 2px;
+        width: 28px;
+        height: 26px;
+
+        img {
+          margin-bottom: 15px;
+        }
+      }
+    }
   }
 }

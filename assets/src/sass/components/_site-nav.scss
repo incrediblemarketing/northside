@@ -1,6 +1,6 @@
 .site-nav {
   position: fixed;
-  z-index: 999;
+  z-index: 9999;
   display: flex;
   width: 100%;
   padding: 20px 15px;
@@ -200,11 +200,16 @@
     width: 35px;
     background: none;
     border: none;
-    margin-left: 15px;
+    margin-left: 8px;
     justify-content: space-between;
     flex-direction: column;
+    position: relative;
     &:focus {
       outline: none;
+    }
+
+    @include mq(md) {
+      margin-left: 15px;
     }
 
     span {
@@ -218,6 +223,14 @@
     @include mq(xl) {
       display: none;
     }
+
+    p {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 11px;
+    }
   }
 
   .sub-menu {
@@ -225,10 +238,19 @@
   }
 
   .btn--white {
-    padding: 0 10px;
-    margin-left: auto;
+    padding: 0 7px;
+    background: #cca29d;
+    color: $white;
+    border: 1px solid #cca29d;
+    opacity: 1;
+    transition: all 0.4s ease-in-out;
+
+    &:hover {
+      background: $black;
+    }
 
     @include mq(md) {
+      padding: 0 10px;
       margin-left: unset;
     }
 
@@ -254,7 +276,10 @@
   z-index: 99;
   display: none;
   @include mq(md) {
-    display: block;
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    flex-direction: column;
   }
   @include mq(lg) {
     width: 100px;
@@ -264,9 +289,9 @@
   }
 
   .social-icons {
-    padding-top: 200px;
     display: flex;
     flex-direction: column;
+    margin-bottom: 50px;
 
     li {
       margin: 20px 0;
@@ -278,5 +303,74 @@
         justify-content: center;
       }
     }
+  }
+}
+
+.side--fixed {
+  padding-top: 150px;
+  .btn-side {
+    margin: 10vh auto;
+    display: block;
+    text-align: center;
+  }
+  .switcher {
+    cursor: pointer;
+    overflow: hidden;
+    width: 36px;
+    line-height: 17px;
+    border: 1px solid #929292;
+    margin: 35px auto;
+
+    .selected a {
+      border: 1px solid #ccc;
+      color: transparent;
+      padding: 3px 4px 2px;
+      width: 28px;
+      height: 26px;
+
+      img {
+        margin-bottom: 15px;
+      }
+
+      &:after {
+        display: none;
+      }
+    }
+
+    .option {
+      position: absolute;
+      width: 35px;
+      a {
+        color: transparent;
+        padding: 3px 4px 2px;
+        width: 28px;
+        height: 26px;
+
+        img {
+          margin-bottom: 15px;
+        }
+      }
+    }
+  }
+}
+
+.banner {
+  background: #cca29d;
+  padding: 10px;
+  font-size: 14px;
+  line-height: 1.2em;
+  text-align: center;
+  color: #fff;
+  position: fixed;
+  top: 88px;
+  width: 100%;
+  z-index: 999;
+
+  @include mq(md) {
+    font-size: 16px;
+    top: 98px;
+  }
+  @include mq(xl) {
+    top: 112px;
   }
 }

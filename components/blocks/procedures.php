@@ -32,16 +32,16 @@
 						?>
 							<div class="procedure--top-block">
 								<?php $currentID = $post->ID; ?>
-								<h3><?php the_title(); ?></h3>
-								<?php echo get_the_post_thumbnail( $currentID, 'post_large' ); ?>
+								<a href="<?php echo esc_url( get_the_permalink() ); ?>"><h3><?php the_title(); ?></h3>
+								<?php echo get_the_post_thumbnail( $currentID, 'post_large' ); ?></a>
 								<?php
-									$args2 = array(
+									$args2  = array(
 										'post_type'   => 'procedure',
 										'post_parent' => $currentID,
 										'order'       => 'ASC',
 										'orderby'     => 'menu_order',
 									);
-									$query2 = new WP_Query($args2);
+									$query2 = new WP_Query( $args2 );
 									if ( $query2->have_posts() ) :
 										?>
 										<ul class="procedure--list">
@@ -52,7 +52,8 @@
 											<li><a href="<?php echo get_the_permalink(); ?>"><?php echo get_the_title(); ?></a></li>
 											<?php
 										endwhile;
-										wp_reset_postdata();?>
+										wp_reset_postdata();
+										?>
 										</ul>
 									<?php endif; ?>
 								</div>

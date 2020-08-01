@@ -35,6 +35,7 @@ require_once get_template_directory() . '/includes/acf/admin-styles.php';
 require_once get_template_directory() . '/includes/post-types/procedures.php';
 require_once get_template_directory() . '/includes/post-types/staff.php';
 require_once get_template_directory() . '/includes/post-types/dermatologists.php';
+require_once get_template_directory() . '/includes/post-types/dermal.php';
 
 // MENUS
 // ==================================================.
@@ -69,6 +70,7 @@ require_once get_template_directory() . '/includes/shortcodes/staff.php';
 require_once get_template_directory() . '/includes/shortcodes/derm.php';
 require_once get_template_directory() . '/includes/shortcodes/locations.php';
 require_once get_template_directory() . '/includes/shortcodes/single_location.php';
+require_once get_template_directory() . '/includes/shortcodes/dermal.php';
 
 // PLUGINS
 // ==================================================.

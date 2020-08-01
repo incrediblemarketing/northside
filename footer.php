@@ -28,23 +28,14 @@
 				<h2>Contact Us</h2>
 				<div class="info--general">
 					<div class="info__hours">
-						<div class="icon--box">
-							<i class="fas fa-clock"></i>
-						</div>
 						<h4>Hours of Operation</h4>
 						<p><?php echo get_field( 'business_hours', 'options' ); ?></p>
 					</div>
 					<div class="info__phone">
-						<div class="icon--box">
-							<i class="fas fa-phone"></i>
-						</div>
 						<h4>Phone Number</h4>
 						<p><a href="<?php echo get_field( 'business_phone_url', 'options' ); ?>"><?php echo get_field( 'business_phone_display', 'options' ); ?></a></p>
 					</div>
 					<div class="info__fax">
-						<div class="icon--box">
-							<i class="fas fa-fax"></i>
-						</div>
 						<h4>Fax Number</h4>
 						<p><?php echo get_field( 'business_fax', 'options' ); ?></p>
 					</div>

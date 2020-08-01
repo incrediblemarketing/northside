@@ -17,10 +17,12 @@
 function shortcode_child_pages( $atts ) {
 
 	$page_id = $atts['id'];
-	$args = array(
+	$args    = array(
 		'post_type'      => 'procedure',
 		'post_parent'    => $page_id,
 		'posts_per_page' => -1,
+		'order'          => 'ASC',
+		'orderby'        => 'menu_order',
 	);
 
 	$the_query = new WP_Query( $args );

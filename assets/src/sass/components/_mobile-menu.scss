@@ -76,7 +76,7 @@
       display: block;
       font-weight: 400;
       position: relative;
-      left: -100%;
+      left: 0;
       @include mq(md) {
         font-size: 30px;
       }

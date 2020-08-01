@@ -33,3 +33,31 @@
     color: $black;
   }
 }
+
+.btn--pink {
+  height: 100px;
+  padding: 0 20px;
+  background-color: #cca29d;
+  color: $white;
+  border: 1px solid #cca29d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none !important;
+  transition: all 0.3s ease-in-out;
+  flex-direction: column;
+
+  @include mq(md) {
+    height: 78px;
+  }
+
+  &:hover {
+    background: $black;
+    color: $white;
+  }
+
+  span {
+    display: block;
+    font-size: 0.8em;
+  }
+}

@@ -67,7 +67,7 @@ header {
       z-index: 99;
       margin-top: 0px;
       color: #929292;
-      font-size: 26px;
+      font-size: 20px;
       line-height: 36px;
       font-weight: 600;
 
@@ -100,13 +100,11 @@ header {
       font-size: 1.2rem;
       border-radius: 10px;
       border: 1px solid $gray;
-      padding: 20px 10px;
       margin-bottom: 30px;
       color: $gray;
       text-align: center;
 
       @include mq(xl) {
-        padding: 20px;
         font-size: 1.3rem;
       }
       @include mq(xxl) {
@@ -114,7 +112,12 @@ header {
       }
 
       a {
+        display: block;
+        padding: 20px 10px;
         color: #929292;
+        @include mq(xl) {
+          padding: 20px;
+        }
       }
     }
 
@@ -150,7 +153,7 @@ header {
     margin-bottom: 30px;
 
     @include mq(md) {
-      width: 50%;
+      width: 65%;
     }
   }
 }
@@ -300,6 +303,110 @@ header {
   .content--area {
     nav {
       margin-top: 45px;
+    }
+  }
+}
+
+.page-id-18,
+.block--contact-form,
+.page-id-267 {
+  .gform_wrapper {
+    li {
+      .gfield_description {
+        ul {
+          list-style: disc;
+          margin: 15px 0;
+          padding: 0 0 0 20px;
+
+          li {
+            list-style: unset !important;
+          }
+        }
+      }
+      &#field_2_8,
+      &#field_1_7,
+      &#field_3_8,
+      &#field_3_9 {
+        .gfield_checkbox {
+          li {
+            display: flex;
+            align-items: center;
+
+            input {
+              height: 15px;
+              margin: 0;
+            }
+
+            label {
+              margin: 0 0 0 12px;
+              align-self: center;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.tour {
+  width: 100%;
+  margin-bottom: 35px;
+}
+
+.toggle {
+  position: relative;
+  .toggle-header {
+    border-bottom: 1px solid $gray;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    @extend h2;
+  }
+
+  .toggle-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 1.4s ease-in-out;
+  }
+
+  &.active {
+    .toggle-content {
+      max-height: 3000px;
+    }
+  }
+}
+
+.content--area {
+  .two-columns {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    grid-gap: 30px;
+    margin-bottom: 30px;
+  }
+
+  .left-column {
+    h4 {
+      margin-bottom: 20px;
+    }
+  }
+  .right-column {
+    text-align: center;
+    .btn {
+      margin-bottom: 30px;
+    }
+  }
+}
+
+.page-id-267 {
+  .gform_wrapper {
+    .gform_fields {
+      grid-template-columns: 1fr;
+
+      input,
+      select,
+      textarea {
+        margin: 0 !important;
+      }
     }
   }
 }

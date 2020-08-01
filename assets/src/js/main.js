@@ -25,8 +25,19 @@
           this.mobileMenu();
           this.siteNavSticky();
           this.galleryBuilder();
-          this.swiperSetup();
-        },
+					this.swiperSetup();
+					this.toggle();
+
+				},
+				toggle: function(){
+					$('.toggle-header').on('click', function(){
+						$(this).parent().toggleClass('active');
+					});
+					
+					$('.search--area i').on('click', function(){
+						$(this).parent().toggleClass('active');
+					})
+				},
         siteNavSticky: function() {
           $cache.window.scroll(function() {
             if ($cache.window.scrollTop() > 0) {
@@ -59,16 +70,10 @@
           var tl = new TimelineLite({ paused: true, reversed: true });
 
           tl.to(".menu__mobile", 0.1, {
-            zIndex: 9999,
+            zIndex: 99999,
             opacity: 1,
             left: 0
           });
-          tl.staggerTo(
-            ".menu__mobile .menu > li",
-            0.25,
-            { left: 0, opacity: 1 },
-            0.1
-          );
 
           $('[data-toggle="menu"]').on("click", function() {
             tl.reversed() ? tl.play() : tl.reverse();

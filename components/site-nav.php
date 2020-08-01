@@ -17,6 +17,9 @@
 	<a class="logo" href="<?php echo esc_url( home_url( '/' ) ); ?>">
 		<?php get_template_part( 'components/svg/logo' ); ?>
 	</a>
+	<div class="mobile-switcher">
+		<?php echo do_shortcode( '[gtranslate]' ); ?>
+	</div>
 
 	<?php
 	$args = array(
@@ -26,14 +29,29 @@
 	);
 	wp_nav_menu( $args );
 	?>
-	<?php get_search_form(); ?> 
-	<a href="https://www.hotdoc.com.au/medical-centres/fitzroy-north-VIC-3068/northside-dermatology/doctors/dr-wenyuan-liu" target="_blank" class="btn--white">Book Now</a>
+	<div class="search--area">
+	<i class="far fa-search-plus"></i>
+		<div class="search-form">
+			<?php get_search_form(); ?> 
+		</div>
+	</div>
+	<a href="/about/book-now/" class="btn--white">Book Now</a>
 	<button data-toggle="menu">
 		<span></span>
 		<span></span>
 		<span></span>
+		<p>Menu</p>
 	</button>
 </nav>
+<?php if ( get_field( 'header_banner_text', 'options' ) ) : ?>
+	<div class="banner">
+		<?php echo get_field( 'header_banner_text', 'options' ); ?>
+	</div>
+<?php endif; ?>
 <div class="side--fixed">
+	<?php echo do_shortcode( '[gtranslate]' ); ?>
+	
+	<?php get_template_part( 'components/call' ); ?>
+
 	<?php get_template_part( 'components/social-icons' ); ?>
 </div>
