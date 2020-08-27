@@ -20,9 +20,10 @@ body {
 }
 
 a {
+  color: #cca29d;
   &:hover {
+    color: $black;
     text-decoration: none;
-    color: #cca29d;
   }
 }
 
@@ -99,8 +100,9 @@ h6 {
     align-items: center;
     justify-content: center;
     margin-right: 15px;
-    background: #cca29d;
+    background: transparent;
     color: $white;
+    border-radius: 8px;
   }
   .search-form {
     position: absolute;
@@ -118,11 +120,11 @@ h6 {
 }
 
 .mobile-switcher {
-  margin-left: 8px;
-  margin-right: 8px;
   height: 38px;
+  position: relative;
+  text-align: center;
+
   @include mq(md) {
-    margin-left: 15px;
     display: none;
   }
 
@@ -130,7 +132,7 @@ h6 {
     margin: 0 !important;
     cursor: pointer;
     overflow: hidden;
-    width: 36px;
+    width: 100%;
     line-height: 17px;
     border: 1px solid #929292;
     margin: 35px auto;
@@ -166,4 +168,24 @@ h6 {
       }
     }
   }
+}
+
+.search-results {
+  .page__lower-level {
+    article {
+      a {
+        img {
+          display: none !important;
+        }
+      }
+
+      .box__date {
+        display: none !important;
+      }
+    }
+  }
+}
+
+.featured--large {
+  margin-bottom: 30px;
 }

@@ -31,7 +31,7 @@ $vimeo         = get_sub_field( 'video_id' );
 		<div class="col-xl-3">
 			<h1><?php echo $content_title; ?></h1>
 		</div>
-		<div class="col-xl-6">
+		<div class="col-xl-6 offset-xl-1">
 			<?php echo $content; ?>
 		</div>
 	</div>

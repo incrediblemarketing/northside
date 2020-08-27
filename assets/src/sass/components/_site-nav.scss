@@ -204,6 +204,8 @@
     justify-content: space-between;
     flex-direction: column;
     position: relative;
+    padding: 0;
+
     &:focus {
       outline: none;
     }
@@ -217,7 +219,7 @@
       background: $black;
       display: block;
       margin: 2px 0;
-      width: 100%;
+      width: 33px;
     }
 
     @include mq(xl) {
@@ -240,6 +242,7 @@
   .btn--white {
     padding: 0 7px;
     background: #cca29d;
+    border-radius: 8px;
     color: $white;
     border: 1px solid #cca29d;
     opacity: 1;
@@ -307,19 +310,23 @@
 }
 
 .side--fixed {
-  padding-top: 150px;
+  padding-top: 180px;
+  padding-bottom: 150px;
   .btn-side {
     margin: 10vh auto;
     display: block;
     text-align: center;
   }
-  .switcher {
+  .switcher,
+  #gtranslate_selector {
     cursor: pointer;
     overflow: hidden;
-    width: 36px;
+    width: 115px;
+    max-width: 100%;
     line-height: 17px;
     border: 1px solid #929292;
-    margin: 35px auto;
+    margin: 0 auto 35px;
+    font-size: 13px;
 
     .selected a {
       border: 1px solid #ccc;
@@ -372,5 +379,13 @@
   }
   @include mq(xl) {
     top: 112px;
+  }
+
+  .btn--white {
+    display: inline-flex;
+    width: auto;
+    margin-left: 10px;
+    height: 32px;
+    padding: 0 8px;
   }
 }

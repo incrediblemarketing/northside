@@ -66,6 +66,7 @@ require_once get_template_directory() . '/includes/shortcodes/call-number.php';
 require_once get_template_directory() . '/includes/shortcodes/reusable-block.php';
 require_once get_template_directory() . '/includes/shortcodes/sidebar.php';
 require_once get_template_directory() . '/includes/shortcodes/child-pages.php';
+require_once get_template_directory() . '/includes/shortcodes/children.php';
 require_once get_template_directory() . '/includes/shortcodes/staff.php';
 require_once get_template_directory() . '/includes/shortcodes/derm.php';
 require_once get_template_directory() . '/includes/shortcodes/locations.php';

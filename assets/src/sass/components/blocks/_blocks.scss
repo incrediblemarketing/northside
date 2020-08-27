@@ -12,6 +12,10 @@ header {
 
     a {
       color: #929292;
+
+      &:hover {
+        color: #cca29d;
+      }
     }
   }
 }
@@ -72,7 +76,7 @@ header {
       font-weight: 600;
 
       &:hover {
-        color: $black;
+        color: #cca29d;
       }
     }
   }
@@ -103,6 +107,7 @@ header {
       margin-bottom: 30px;
       color: $gray;
       text-align: center;
+      margin-top: 0 !important;
 
       @include mq(xl) {
         font-size: 1.3rem;
@@ -117,6 +122,9 @@ header {
         color: #929292;
         @include mq(xl) {
           padding: 20px;
+        }
+        &:hover {
+          color: #cca29d;
         }
       }
     }
@@ -138,7 +146,7 @@ header {
           font-weight: 600;
 
           &:hover {
-            color: $black;
+            color: #cca29d;
           }
         }
       }
@@ -211,6 +219,9 @@ header {
     }
     ul {
       padding-left: 25px;
+    }
+    a {
+      font-weight: bold;
     }
   }
 }

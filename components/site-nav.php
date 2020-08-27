@@ -16,10 +16,7 @@
 <nav class="site-nav">
 	<a class="logo" href="<?php echo esc_url( home_url( '/' ) ); ?>">
 		<?php get_template_part( 'components/svg/logo' ); ?>
-	</a>
-	<div class="mobile-switcher">
-		<?php echo do_shortcode( '[gtranslate]' ); ?>
-	</div>
+</a>
 
 	<?php
 	$args = array(

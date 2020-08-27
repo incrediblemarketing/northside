@@ -29,5 +29,8 @@
 		wp_nav_menu( $args );
 		?>
 	<hr />
+	<div class="mobile-switcher">
+		<?php echo do_shortcode( '[gtranslate]' ); ?>
+	</div>
 	<?php get_template_part( 'components/social-icons' ); ?>
 </section>
