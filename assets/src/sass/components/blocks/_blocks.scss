@@ -152,6 +152,16 @@ header {
       }
     }
   }
+
+  &.pages--area {
+    padding-top: 45px;
+    .procedure--area {
+      h2 {
+        font-size: 1.2rem;
+        margin-bottom: 0;
+      }
+    }
+  }
 }
 
 .featured--large {

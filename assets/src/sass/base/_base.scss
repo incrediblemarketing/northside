@@ -5,6 +5,13 @@ html {
   @include mq(xl) {
     font-size: 20px;
   }
+
+  &[lang="el"] {
+    font-size: 14px;
+    .site-nav .menu > li a {
+      font-size: 13px;
+    }
+  }
 }
 
 body {
@@ -126,6 +133,22 @@ h6 {
 
   @include mq(md) {
     display: none;
+  }
+
+  select {
+    @extend .btn--pink;
+    white-space: normal;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    height: 27px !important;
+    border: none;
+    border-radius: 8px;
+    margin: 0 auto;
+
+    &:focus {
+      outline: none;
+    }
   }
 
   .switcher {

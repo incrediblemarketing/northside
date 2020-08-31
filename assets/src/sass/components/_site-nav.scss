@@ -327,6 +327,18 @@
     border: 1px solid #929292;
     margin: 0 auto 35px;
     font-size: 13px;
+    @extend .btn--pink;
+    white-space: normal;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    height: 41px !important;
+    border: none;
+    border-radius: 8px;
+
+    &:focus {
+      outline: none !important;
+    }
 
     .selected a {
       border: 1px solid #ccc;
@@ -352,6 +364,7 @@
         padding: 3px 4px 2px;
         width: 28px;
         height: 26px;
+        text-align: center;
 
         img {
           margin-bottom: 15px;

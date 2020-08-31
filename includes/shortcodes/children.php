@@ -28,16 +28,12 @@ function shortcode_children( $atts ) {
 	$the_query = new WP_Query( $args );
 
 	if ( $the_query->have_posts() ) :
-		$content = '<div class="grid--inner">';
+		$content = '<div class="grid--inner pages--area">';
 		while ( $the_query->have_posts() ) :
 			$the_query->the_post();
 			$content .= '<div class="procedure--area">';
-			if ( has_post_thumbnail($currentID) ) :
-				$content .= get_the_post_thumbnail( $currentID, 'blog_preview_thumb' );
-			else :
-					$content .= im_get_placeholder_image( 'blog_preview_thumb' );
-			endif;
-				$content .= '<h2><a href="' . get_the_permalink() . '">"' . get_the_title() . '"</a></h2>';
+
+				$content .= '<h2><a href="' . get_the_permalink() . '">' . get_the_title() . '</a></h2>';
 				$content .= '</div>';
 		endwhile;
 		$content .= '</div>';
