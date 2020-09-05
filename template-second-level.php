@@ -21,9 +21,9 @@ get_header();  ?>
 				<div class="featured--large">
 					<?php
 					if ( has_post_thumbnail() ) :
-						echo get_the_post_thumbnail( $current_id, 'blog_preview_thumb' );
+						echo get_the_post_thumbnail( $current_id, 'top_thumb' );
 					else :
-						im_the_placeholder_image( 'blog_preview_thumb' );
+						im_the_placeholder_image( 'top_thumb' );
 					endif;
 					?>
 				</div>

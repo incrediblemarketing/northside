@@ -47,12 +47,12 @@
 						<?php the_row(); ?>
 						<?php if ( get_row_layout() == 'location' ) : ?>
 							<div class="location--box">
-								<?php echo get_sub_field( 'iframe' ); ?>
 								<div class="info--box">
 									<h3><?php echo get_sub_field( 'business_title' ); ?></h3>
 									<p><?php echo get_sub_field( 'business_street_address' ); ?><br/><?php echo get_sub_field( 'business_city_state_zip' ); ?></p>
 									<a href="<?php echo get_sub_field( 'business_address_link' ); ?>">Get Directions ></a>
 								</div>
+								<?php echo get_sub_field( 'iframe' ); ?>
 							</div>
 						<?php endif; ?>
 					<?php endwhile; ?>

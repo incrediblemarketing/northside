@@ -275,7 +275,7 @@
   position: fixed;
   right: 0;
   top: 0;
-  width: 50px;
+  width: 100px;
   z-index: 99;
   display: none;
   @include mq(md) {
@@ -311,9 +311,9 @@
 
 .side--fixed {
   padding-top: 180px;
-  padding-bottom: 150px;
+  padding-bottom: 25vh;
   .btn-side {
-    margin: 10vh auto;
+    margin: 5vh auto;
     display: block;
     text-align: center;
   }
@@ -335,6 +335,7 @@
     height: 41px !important;
     border: none;
     border-radius: 8px;
+    padding: 10px !important;
 
     &:focus {
       outline: none !important;

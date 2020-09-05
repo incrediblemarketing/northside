@@ -36,9 +36,9 @@ get_header();  ?>
 						<?php $currentID = $post->ID; ?>
 						<?php
 						if ( has_post_thumbnail() ) :
-							echo get_the_post_thumbnail( $currentID, 'blog_preview_thumb' );
+							echo get_the_post_thumbnail( $currentID, 'top_thumb' );
 						else :
-							im_the_placeholder_image( 'blog_preview_thumb' );
+							im_the_placeholder_image( 'top_thumb' );
 						endif;
 						?>
 						<h2><a href="<?php echo get_the_permalink(); ?>"><?php the_title(); ?></a></h2>

@@ -12,6 +12,7 @@
  */
 
 add_image_size( 'blog_preview_thumb', 374, 226, true );
+add_image_size( 'top_thumb', 575, 348, true );
 add_image_size( 'featured_thumb', 535, 402, true );
 add_image_size( 'parent_thumb', 715, 715, true );
 add_image_size( 'background_thumb', 1430, 569, true );
@@ -37,6 +38,7 @@ function im_image_sizes( $sizes ) {
 			'page_header_thumb'  => __( 'Page Header Thumbnail' ),
 			'blog_row_thumb'     => __( 'Blog Row Thumbnail' ),
 			'post_large'         => __( 'Post Large' ),
+			'top_thumb'          => __( 'Top Thumb' ),
 		)
 	);
 }
@@ -69,7 +71,7 @@ function im_get_placeholder_image( $size = full, $class = '', $bg_color = '25252
  * @param string|int   $text_color string or int (usually a HEX) as its the text color.
  */
 function im_the_placeholder_image( $size = full, $class = '', $bg_color = '252525', $text_color = 'FFFFFF' ) {
-	echo im_get_placeholder_image( $size, $class, $bg_color, $text_color ) ;
+	echo im_get_placeholder_image( $size, $class, $bg_color, $text_color );
 }
 
 /**
