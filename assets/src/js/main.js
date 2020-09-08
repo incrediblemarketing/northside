@@ -35,7 +35,7 @@
 					});
 					
 					$('.search--area i').on('click', function(){
-						$(this).parent().toggleClass('active');
+						$('body').toggleClass('search-active');
 					})
 				},
         siteNavSticky: function() {

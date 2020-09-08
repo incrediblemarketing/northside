@@ -9,6 +9,7 @@
   top: 0;
   left: 0;
   justify-content: space-between;
+  transition: all 0.4s ease-in-out;
 
   @include mq(xl) {
     padding: 0 15px;
@@ -151,46 +152,6 @@
     }
     @include mq(xl) {
       margin-left: uset;
-    }
-  }
-  #searchform {
-    margin-right: 15px;
-
-    @include mq(xxl) {
-      margin-right: 25px;
-    }
-
-    input {
-      display: block;
-      height: 38px;
-      padding: 8px 12px;
-      font-size: 14px;
-      line-height: 1.42857143;
-      color: #333333;
-      vertical-align: middle;
-      background-color: $white;
-      border: 1px solid #cccccc;
-      width: 180px;
-      margin-bottom: 0px;
-      padding-left: 20px;
-      border-radius: 20px;
-
-      @include mq(xl) {
-        width: 140px;
-      }
-
-      @include mq(xxl) {
-        width: 200px;
-      }
-
-      &:focus {
-        outline: none;
-        border: 1px solid $black;
-      }
-    }
-
-    input#searchsubmit {
-      display: none;
     }
   }
 
@@ -401,5 +362,13 @@
     margin-left: 10px;
     height: 32px;
     padding: 0 8px;
+  }
+
+  a {
+    color: $black;
+
+    &:hover {
+      color: $white;
+    }
   }
 }
