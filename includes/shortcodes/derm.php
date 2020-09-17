@@ -24,16 +24,15 @@ function shortcode_derm() {
 		'orderby'        => 'menu_order',
 	);
 
-	$derm   = new WP_Query( $args );
+	$derm    = new WP_Query( $args );
 	$content = '';
 	if ( $derm->have_posts() ) :
 		$content .= '<div class="team--grid">';
 		while ( $derm->have_posts() ) :
 			$derm->the_post();
 			$content .= '<div class="block__team-member">';
-			$content .= '<a href="'.get_the_permalink().'">';
 			$content .= get_the_post_thumbnail( $post->ID, 'blog_preview_thumb' );
-			$content .= '<h3>' . get_the_title() . '</h3>';
+			$content .= '<h2><a href="' . get_the_permalink() . '">' . get_the_title() . '</a></h2>';
 			$content .= '</a></div>';
 		endwhile;
 		$content .= '</div>';

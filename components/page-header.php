@@ -54,27 +54,30 @@ if ( is_singular( 'procedure' ) ) {
 						<?php elseif ( is_search() ) : ?>
 							Search<br><small>
 							<?php
-					$allsearch = new WP_Query( "s=$s&showposts=-1" );
-					$key       = esc_html( $s, 1 );
-					$count     = $allsearch->post_count;
-					echo $count . ' ';
-					_e( 'results for ', 'responsive' );
-					_e( '<span class="post-search-terms">', 'responsive' );
-					echo '&ldquo;';
-					echo $key;
-					echo '&rdquo;';
-					_e( '</span><!-- end of .post-search-terms -->', 'responsive' );
-					wp_reset_query();
-			?>
+							$allsearch = new WP_Query( "s=$s&showposts=-1" );
+							$key       = esc_html( $s, 1 );
+							$count     = $allsearch->post_count;
+							echo $count . ' ';
+							_e( 'results for ', 'responsive' );
+							_e( '<span class="post-search-terms">', 'responsive' );
+							echo '&ldquo;';
+							echo $key;
+							echo '&rdquo;';
+							_e( '</span><!-- end of .post-search-terms -->', 'responsive' );
+							wp_reset_query();
+							?>
 							</small>
 						<?php else : ?>
 							<?php the_title(); ?>
 						<?php endif; ?>
 					</h1>
 				</div>
-				<?php if(!is_search()) : ?>
+				<?php if ( ! is_search() ) : ?>
 					<div class="breadcrumbs">
 						<a href="/">Home</a> / 
+						<?php if ( is_singular( 'dermatologist' ) ) : ?>
+							<a href="/about/our-dermatologists/">Dermatologists</a> / 
+						<?php endif; ?>
 						<?php if ( 0 !== $grandparentId ) { ?>
 							<a href="<?php echo get_permalink( $grandparentId ); ?>"><?php echo get_the_title( $grandparentId ); ?></a> /
 						<?php } ?>

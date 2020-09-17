@@ -282,7 +282,7 @@
   #gtranslate_selector {
     cursor: pointer;
     overflow: hidden;
-    width: 115px;
+    width: 100px;
     max-width: 100%;
     line-height: 17px;
     border: 1px solid #929292;
@@ -365,10 +365,12 @@
   }
 
   a {
-    color: $black;
+    color: $white;
+    text-decoration: underline;
 
     &:hover {
       color: $white;
+      text-decoration: none;
     }
   }
 }

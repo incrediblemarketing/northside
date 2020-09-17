@@ -113,6 +113,11 @@ header {
         display: block;
         padding: 20px 10px;
         color: #929292;
+        font-size: 1rem !important;
+        line-height: 1.2;
+        font-family: $open-sans !important;
+        font-weight: bold !important;
+
         &:hover {
           color: #cca29d;
         }
@@ -251,11 +256,13 @@ header {
   img {
     width: 100%;
     height: auto;
+    margin-bottom: 25px;
   }
 
   iframe {
     width: 100%;
     height: 300px;
+    margin-bottom: 25px;
   }
 
   a {
@@ -265,29 +272,37 @@ header {
     margin-top: 15px !important;
     font-size: 1.2rem !important;
     text-align: center;
+    font-family: $open-sans !important;
+    font-weight: bold !important;
   }
 
   h2 {
-    font-size: 1.2rem !important;
-    border-radius: 10px;
-    border: 1px solid $gray;
-    padding: 20px 10px;
     margin-bottom: 30px;
-    color: $gray;
-    text-align: center;
-    font-family: $open-sans !important;
-    font-weight: bold !important;
-
-    @include mq(xl) {
-      padding: 20px;
-      font-size: 1.5rem !important;
-    }
+    margin-top: 0 !important;
 
     a {
       color: #929292;
+      font-size: 1rem !important;
+      text-align: center;
+      margin-top: 0 !important;
+      padding: 20px 10px;
+      border-radius: 10px;
+      border: 1px solid $gray;
+      line-height: 1.2 !important;
+      font-weight: 600;
+      font-family: $open-sans !important;
+      font-weight: bold !important;
 
       &:hover {
         color: $black;
+      }
+      @include mq(xl) {
+        padding: 20px;
+      }
+    }
+    &.full-width {
+      @include mq(md) {
+        grid-column: span 2;
       }
     }
   }
