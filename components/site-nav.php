@@ -31,7 +31,8 @@
 	<div class="search--area">
 		<i class="far fa-search-plus"></i>
 	</div>
-	<a href="/about/book-now/" class="btn--white">Book Now</a>
+	<a href="/about/book-now/" class="btn--white book--now">Book Now</a>
+	<?php get_template_part( 'components/call' ); ?>
 	<button data-toggle="menu">
 		<span></span>
 		<span></span>

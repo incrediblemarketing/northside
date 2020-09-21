@@ -29,6 +29,10 @@
 		wp_nav_menu( $args );
 		?>
 	<hr />
+	<a href="/about/book-now/" class="btn--pink">Book Now</a>
+	<a class="btn--pink" href="<?php echo get_field( 'business_phone_url', 'options' ); ?>">
+		Call <?php echo get_field( 'business_phone_display', 'options' ); ?>
+	</a>
 	<div class="mobile-switcher">
 		<?php echo do_shortcode( '[gtranslate]' ); ?>
 	</div>

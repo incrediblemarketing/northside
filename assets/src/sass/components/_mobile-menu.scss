@@ -61,11 +61,11 @@
     margin: 45px 0;
     list-style: none;
     max-height: 70%;
-    height: 60%;
+    height: 40%;
     overflow: auto;
     text-align: center;
     @media screen and (max-height: 600px) {
-      max-height: 49%;
+      max-height: 30%;
     }
     @include mq($until: md) {
       margin-top: 15px;
@@ -137,6 +137,11 @@
     background: $black;
     max-width: 100%;
     margin-bottom: 25px;
+  }
+  a.btn--pink {
+    height: 40px;
+    width: 80%;
+    margin: 0px auto 20px;
   }
   .social-icons {
     justify-content: center;

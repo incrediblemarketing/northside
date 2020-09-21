@@ -222,6 +222,30 @@
       padding: 0 20px;
     }
   }
+  .book--now {
+    display: none;
+    @include mq(md) {
+      display: flex;
+    }
+  }
+
+  .btn-side {
+    height: 45px;
+    width: 45px;
+    border: 1px solid #cca29d;
+    background: #cca29d;
+    color: $white;
+    border-radius: 100em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: 15px;
+
+    @include mq(md) {
+      display: none !important;
+    }
+  }
 
   // offset if WP admin bar is present
   .admin-bar & {
@@ -344,7 +368,7 @@
   text-align: center;
   color: #fff;
   position: fixed;
-  top: 88px;
+  top: 85px;
   width: 100%;
   z-index: 999;
 
