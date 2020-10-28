@@ -86,7 +86,7 @@
           left: 50%;
           transform: translateX(-50%);
           display: block;
-          background: #bfc1bc;
+          background: $white;
           padding: 0;
           margin: 0;
           list-style: none;
@@ -103,7 +103,7 @@
               border-bottom: 0;
               transition: all 0.3s ease-in-out;
               &:hover {
-                background: $white;
+                background: #bfc1bc;
                 color: $black;
               }
             }
@@ -118,7 +118,7 @@
                 padding: 0;
                 list-style: none;
                 display: block;
-                background: #bfc1bc;
+                background: $white;
                 position: absolute;
                 top: 0;
                 left: 100%;
@@ -131,7 +131,7 @@
                     border-bottom: 0;
                     transition: all 0.3s ease-in-out;
                     &:hover {
-                      background: $white;
+                      background: #bfc1bc;
                       color: $black;
                     }
                   }

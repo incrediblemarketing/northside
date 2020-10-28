@@ -78,6 +78,9 @@ if ( is_singular( 'procedure' ) ) {
 						<?php if ( is_singular( 'dermatologist' ) ) : ?>
 							<a href="/about/our-dermatologists/">Dermatologists</a> / 
 						<?php endif; ?>
+						<?php if ( is_singular( 'dermal_clinician' ) ) : ?>
+							<a href="/about/dermal-clinicians/">Dermal Clinicians</a> / 
+						<?php endif; ?>
 						<?php if ( 0 !== $grandparentId ) { ?>
 							<a href="<?php echo get_permalink( $grandparentId ); ?>"><?php echo get_the_title( $grandparentId ); ?></a> /
 						<?php } ?>
